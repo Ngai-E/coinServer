@@ -1,0 +1,18 @@
+[Unit]
+Description=Spring Boot footprint
+After=syslog.target
+After=network.target[Service]
+User=ngai
+Type=simple
+
+[Service]
+ExecStart=/home/ngai/Projets/JavaSpringBoot/complete/runFootprint.sh
+Restart=always
+RestartSec=3
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=footprint
+
+[Install]
+WantedBy=multi-user.target
+
